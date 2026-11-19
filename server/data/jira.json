@@ -1,0 +1,30 @@
+{
+  "project": "MM",
+  "sprints": [
+    { "name": "Sprint 14", "start": "2026-10-26", "end": "2026-11-08", "state": "completed" },
+    { "name": "Sprint 15", "start": "2026-11-09", "end": "2026-11-22", "state": "active" }
+  ],
+  "tickets": [
+    { "key": "MM-101", "title": "API לאימות משתמשים (JWT)", "assignee": "s2", "type": "Story", "status": "Done", "points": 5, "sprint": "Sprint 14", "created": "2026-10-20", "resolved": "2026-10-30" },
+    { "key": "MM-102", "title": "מסך התחברות ב-React", "assignee": "s3", "type": "Story", "status": "Done", "points": 3, "sprint": "Sprint 14", "created": "2026-10-20", "resolved": "2026-11-04", "note": "התעכב כי ה-API של MM-101 לא היה מוכן עד 30/10" },
+    { "key": "MM-103", "title": "סכמת מסד נתונים למשימות ומשתמשים", "assignee": "s2", "type": "Task", "status": "Done", "points": 3, "sprint": "Sprint 14", "created": "2026-10-20", "resolved": "2026-10-28" },
+    { "key": "MM-104", "title": "הקמת pipeline ל-CI (בנייה ובדיקות)", "assignee": "s5", "type": "Task", "status": "Done", "points": 5, "sprint": "Sprint 14", "created": "2026-10-21", "resolved": "2026-10-29" },
+    { "key": "MM-105", "title": "בדיקות אוטומציה ל-API האימות", "assignee": "s4", "type": "Task", "status": "Done", "points": 3, "sprint": "Sprint 14", "created": "2026-10-27", "resolved": "2026-11-06" },
+    { "key": "MM-106", "title": "הצפנת סודות וניהול מפתחות בסביבת הפיתוח", "assignee": "s5", "type": "Story", "status": "Done", "points": 5, "sprint": "Sprint 14", "created": "2026-10-26", "resolved": "2026-11-05" },
+    { "key": "MM-107", "title": "תכנון ארכיטקטורת סוכנים (Design Doc)", "assignee": "s1", "type": "Task", "status": "Done", "points": 5, "sprint": "Sprint 14", "created": "2026-10-22", "resolved": "2026-11-02" },
+    { "key": "MM-108", "title": "דשבורד ראשי – שלד ומסכי ניווט", "assignee": "s3", "type": "Story", "status": "Done", "points": 5, "sprint": "Sprint 14", "created": "2026-10-26", "resolved": "2026-11-08" },
+    { "key": "MM-109", "title": "בדיקות רגרסיה למסך התחברות", "assignee": "s4", "type": "Task", "status": "Done", "points": 2, "sprint": "Sprint 14", "created": "2026-11-04", "resolved": "2026-11-08" },
+    { "key": "MM-110", "title": "ייצוא נתוני Jira למסד הנתונים", "assignee": "s2", "type": "Story", "status": "Done", "points": 5, "sprint": "Sprint 14", "created": "2026-10-27", "resolved": "2026-11-09", "note": "נסגר יום אחרי סוף הספרינט" },
+    { "key": "MM-111", "title": "סוכן ניתוח קוד – קריאת Git Diffs", "assignee": "s1", "type": "Story", "status": "In Progress", "points": 8, "sprint": "Sprint 15", "created": "2026-11-03" },
+    { "key": "MM-112", "title": "אינטגרציית Git – שליפת PRs וקומיטים", "assignee": "s2", "type": "Story", "status": "In Review", "points": 5, "sprint": "Sprint 15", "created": "2026-11-03" },
+    { "key": "MM-113", "title": "חלון צ'אט עם סטרימינג בדשבורד", "assignee": "s3", "type": "Story", "status": "In Progress", "points": 5, "sprint": "Sprint 15", "created": "2026-11-05" },
+    { "key": "MM-114", "title": "מסך סיכום שבועי להנהלה", "assignee": "s3", "type": "Story", "status": "Blocked", "points": 5, "sprint": "Sprint 15", "created": "2026-11-05", "note": "חסום – ממתין לפורמט הפלט של סוכן הסיכומים" },
+    { "key": "MM-115", "title": "בדיקות E2E לזרימת הצ'אט", "assignee": "s4", "type": "Task", "status": "To Do", "points": 5, "sprint": "Sprint 15", "created": "2026-11-09" },
+    { "key": "MM-116", "title": "בדיקות עומס ל-API הנתונים", "assignee": "s4", "type": "Task", "status": "To Do", "points": 3, "sprint": "Sprint 15", "created": "2026-11-09" },
+    { "key": "MM-117", "title": "הגדרת Kubernetes לסביבת סטייג'ינג", "assignee": "s5", "type": "Story", "status": "In Progress", "points": 8, "sprint": "Sprint 15", "created": "2026-11-03" },
+    { "key": "MM-118", "title": "סריקת פגיעויות בתלויות (npm audit) וטיפול", "assignee": "s5", "type": "Bug", "status": "To Do", "points": 2, "sprint": "Sprint 15", "created": "2026-11-10" },
+    { "key": "MM-119", "title": "סוכן ניהול משימות – ניתוח צווארי בקבוק", "assignee": "s1", "type": "Story", "status": "To Do", "points": 8, "sprint": "Sprint 15", "created": "2026-11-03" },
+    { "key": "MM-120", "title": "באג: כפילויות כרטיסים בייצוא Jira", "assignee": "s2", "type": "Bug", "status": "In Progress", "points": 2, "sprint": "Sprint 15", "created": "2026-11-10" },
+    { "key": "MM-121", "title": "בדיקות ידניות לדשבורד הראשי", "assignee": "s4", "type": "Task", "status": "In Progress", "points": 3, "sprint": "Sprint 15", "created": "2026-11-09" }
+  ]
+}

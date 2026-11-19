@@ -1,0 +1,42 @@
+[
+  {
+    "id": "s1",
+    "fullName": "נועם לוי",
+    "role": "מפקד צוות / Tech Lead",
+    "city": "פתח תקווה",
+    "training": "קורס קצינים; תואר ראשון במדעי המחשב; הסמכת AWS Solutions Architect",
+    "skills": ["Backend", "ארכיטקטורה", "ניהול צוות"]
+  },
+  {
+    "id": "s2",
+    "fullName": "מאיה כהן",
+    "role": "מפתחת Backend",
+    "city": "חיפה",
+    "training": "קורס תכנות בצבא (מגשימים); תואר ראשון בהנדסת תוכנה בטכניון",
+    "skills": ["Node.js", "Python", "מסדי נתונים"]
+  },
+  {
+    "id": "s3",
+    "fullName": "איתי אברהם",
+    "role": "מפתח Frontend",
+    "city": "באר שבע",
+    "training": "קורס פיתוח Full Stack; שירות ביחידת מודיעין; סטודנט להנדסת תוכנה באוניברסיטת בן גוריון",
+    "skills": ["React", "TypeScript", "UX"]
+  },
+  {
+    "id": "s4",
+    "fullName": "שירה מזרחי",
+    "role": "מהנדסת QA ואוטומציה",
+    "city": "ירושלים",
+    "training": "הסמכת ISTQB; קורס אוטומציה בצבא; תואר ראשון במערכות מידע",
+    "skills": ["Playwright", "בדיקות API", "CI/CD"]
+  },
+  {
+    "id": "s5",
+    "fullName": "דור ביטון",
+    "role": "מהנדס DevOps ואבטחה",
+    "city": "אשדוד",
+    "training": "קורס סייבר והגנה; הסמכות Linux (RHCSA) ו-Kubernetes (CKA)",
+    "skills": ["Docker", "Kubernetes", "Git", "אבטחת מידע"]
+  }
+]
