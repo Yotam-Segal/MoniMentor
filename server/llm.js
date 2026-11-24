@@ -12,6 +12,10 @@ const getClient = () => (client ??= new Anthropic({ apiKey: process.env.ANTHROPI
 const model = () => process.env.CLAUDE_MODEL || 'claude-sonnet-5-5';
 export const llmReady = () => Boolean(process.env.ANTHROPIC_API_KEY);
 
+// The model thinks by default and thinking tokens count against max_tokens, which cut visible answers short.
+// There are no tool calls here, so thinking is turned off.
+const NO_THINKING = { type: 'between_tools' };
+
 const toMessages = (messages) =>
   messages.map((m) => ({
     role: m.role === 'assistant' ? 'assistant' : 'user',
@@ -21,7 +25,8 @@ const toMessages = (messages) =>
 export async function streamChat(messages, onText) {
   const stream = getClient().messages.stream({
     model: model(),
-    max_tokens: 1024,
+    max_tokens: 2048,
+    thinking: NO_THINKING,
     system: SYSTEM_PROMPT + TEAM_CONTEXT,
     messages: toMessages(messages),
   });
@@ -34,6 +39,7 @@ export async function complete({ system, prompt, maxTokens = 2000 }) {
   const res = await getClient().messages.create({
     model: model(),
     max_tokens: maxTokens,
+    thinking: NO_THINKING,
     system,
     messages: [{ role: 'user', content: prompt }],
   });

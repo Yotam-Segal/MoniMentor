@@ -1,11 +1,43 @@
 [
   {
+    "id": "d0",
+    "fullName": "דורין לב",
+    "role": "סמנכ\"לית פיתוח",
+    "city": "תל אביב",
+    "training": "תואר שני במנהל עסקים (MBA); תואר ראשון בהנדסת תוכנה; 15 שנות ניהול בכיר בהייטק",
+    "skills": ["ניהול אסטרטגי", "תקציב", "גיוס"],
+    "managerId": null,
+    "photo": null
+  },
+  {
+    "id": "l1",
+    "fullName": "ליאור ישי",
+    "role": "מנהל קבוצת פיתוח מוצר",
+    "city": "הרצליה",
+    "training": "תואר ראשון במדעי המחשב; קורס מנהלים בכירים; ניסיון בהובלת צוותי Full Stack",
+    "skills": ["ניהול צוות", "Roadmap", "גיוס"],
+    "managerId": "d0",
+    "photo": null
+  },
+  {
+    "id": "y1",
+    "fullName": "יותם סגל",
+    "role": "מנהל קבוצת תשתיות ופלטפורמה",
+    "city": "כפר סבא",
+    "training": "תואר ראשון בהנדסת חשמל; הסמכת CKA; שירות בחיל התקשוב",
+    "skills": ["תשתיות", "אבטחה", "ניהול קיבולת"],
+    "managerId": "d0",
+    "photo": null
+  },
+  {
     "id": "s1",
     "fullName": "נועם לוי",
     "role": "מפקד צוות / Tech Lead",
     "city": "פתח תקווה",
     "training": "קורס קצינים; תואר ראשון במדעי המחשב; הסמכת AWS Solutions Architect",
-    "skills": ["Backend", "ארכיטקטורה", "ניהול צוות"]
+    "skills": ["Backend", "ארכיטקטורה", "ניהול צוות"],
+    "managerId": "l1",
+    "photo": null
   },
   {
     "id": "s2",
@@ -13,7 +45,9 @@
     "role": "מפתחת Backend",
     "city": "חיפה",
     "training": "קורס תכנות בצבא (מגשימים); תואר ראשון בהנדסת תוכנה בטכניון",
-    "skills": ["Node.js", "Python", "מסדי נתונים"]
+    "skills": ["Node.js", "Python", "מסדי נתונים"],
+    "managerId": "l1",
+    "photo": null
   },
   {
     "id": "s3",
@@ -21,7 +55,9 @@
     "role": "מפתח Frontend",
     "city": "באר שבע",
     "training": "קורס פיתוח Full Stack; שירות ביחידת מודיעין; סטודנט להנדסת תוכנה באוניברסיטת בן גוריון",
-    "skills": ["React", "TypeScript", "UX"]
+    "skills": ["React", "TypeScript", "UX"],
+    "managerId": "l1",
+    "photo": null
   },
   {
     "id": "s4",
@@ -29,7 +65,9 @@
     "role": "מהנדסת QA ואוטומציה",
     "city": "ירושלים",
     "training": "הסמכת ISTQB; קורס אוטומציה בצבא; תואר ראשון במערכות מידע",
-    "skills": ["Playwright", "בדיקות API", "CI/CD"]
+    "skills": ["Playwright", "בדיקות API", "CI/CD"],
+    "managerId": "l1",
+    "photo": null
   },
   {
     "id": "s5",
@@ -37,6 +75,38 @@
     "role": "מהנדס DevOps ואבטחה",
     "city": "אשדוד",
     "training": "קורס סייבר והגנה; הסמכות Linux (RHCSA) ו-Kubernetes (CKA)",
-    "skills": ["Docker", "Kubernetes", "Git", "אבטחת מידע"]
+    "skills": ["Docker", "Kubernetes", "Git", "אבטחת מידע"],
+    "managerId": "y1",
+    "photo": null
+  },
+  {
+    "id": "n1",
+    "fullName": "עומר פרידמן",
+    "role": "מהנדס נתונים",
+    "city": "רמת גן",
+    "training": "תואר שני בלמידת מכונה; קורס Data Engineering",
+    "skills": ["Embeddings", "Python", "Vector DB"],
+    "managerId": "y1",
+    "photo": null
+  },
+  {
+    "id": "n2",
+    "fullName": "הדס שלום",
+    "role": "מפתחת Backend",
+    "city": "נתניה",
+    "training": "תואר ראשון במדעי המחשב באוניברסיטת תל אביב; קורס מגשימים",
+    "skills": ["PostgreSQL", "Node.js", "API"],
+    "managerId": "y1",
+    "photo": null
+  },
+  {
+    "id": "n3",
+    "fullName": "גיל רוזן",
+    "role": "מהנדס SRE",
+    "city": "רחובות",
+    "training": "הסמכת Azure Administrator; שירות כטכנאי רשתות בחיל התקשוב",
+    "skills": ["ניטור", "רשתות", "Linux"],
+    "managerId": "y1",
+    "photo": null
   }
 ]

@@ -4,7 +4,11 @@ const load = (f) => JSON.parse(readFileSync(new URL(`./data/${f}`, import.meta.u
 export const team = load('team.json');
 export const jira = load('jira.json');
 export const git = load('git.json');
-export const name = (id) => team.find((p) => p.id === id)?.fullName ?? id;
+export const calendar = load('calendar.json');
+export const projects = load('projects.json');
+// The signed-in manager (no auth yet).
+export const ME_ID = 'd0';
+export const name =(id) => team.find((p) => p.id === id)?.fullName ?? id;
 
 // Mock data is anchored to this date (latest commit), not the wall clock.
 export const REPORT_DATE = '2026-11-12';
@@ -15,14 +19,17 @@ export const TEAM_CONTEXT = `
 התאריך היום: ${REPORT_DATE}. נתוני הדמה הבאים הם כל המידע שיש לך – אל תמציא מעבר להם.
 
 חברי הצוות:
-${team.map((p) => `- ${p.fullName} | ${p.role} | ${p.city} | הכשרה: ${p.training}`).join('\n')}
+${team.map((p) => `- ${p.fullName} | ${p.role} | ${p.city} | הכשרה: ${p.training} | כפוף ל: ${p.managerId ? name(p.managerId) : '— (המשתמשת הנוכחית)'}`).join('\n')}
 
 ספרינטים: ${jira.sprints.map((s) => `${s.name} (${s.start}–${s.end}, ${s.state})`).join('; ')}
 
-כרטיסי Jira (מפתח | כותרת | אחראי | סוג | סטטוס | נקודות | ספרינט | נוצר | נסגר | הערה):
+כרטיסי Jira (מפתח | כותרת | אחראי | סוג | סטטוס | נקודות | ספרינט | נוצר | נסגר | פרויקט | הערה):
 ${jira.tickets
-  .map((t) => [t.key, t.title, name(t.assignee), t.type, t.status, t.points, t.sprint, t.created, t.resolved ?? '-', t.note ?? ''].join(' | '))
+  .map((t) => [t.key, t.title, name(t.assignee), t.type, t.status, t.points, t.sprint, t.created, t.resolved ?? '-', t.project ?? '-', t.note ?? ''].join(' | '))
   .join('\n')}
+
+פרויקטים (מזהה | שם | אחראי | התחלה | יעד | שלב):
+${projects.map((p) => [p.id, p.name, name(p.ownerId), p.start, p.target, p.phase].join(' | ')).join('\n')}
 
 קומיטים ב-Git (hash | כותרת | כותב | תאריך | קבצים | +שורות/-שורות | כרטיס):
 ${git.commits
