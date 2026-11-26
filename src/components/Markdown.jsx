@@ -1,7 +1,10 @@
+import { Fragment } from 'react';
+import { linkTasks } from './TaskLink.jsx';
+
 // Minimal markdown renderer (headings, bullets, bold) – avoids an extra dependency.
 const inline = (text) =>
   text.split(/(\*\*[^*]+\*\*)/g).map((part, i) =>
-    part.startsWith('**') && part.endsWith('**') ? <strong key={i}>{part.slice(2, -2)}</strong> : part,
+    part.startsWith('**') && part.endsWith('**') ? <strong key={i}>{linkTasks(part.slice(2, -2))}</strong> : <Fragment key={i}>{linkTasks(part)}</Fragment>,
   );
 
 export default function Markdown({ text }) {

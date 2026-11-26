@@ -1,4 +1,4 @@
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 
 const load = (f) => JSON.parse(readFileSync(new URL(`./data/${f}`, import.meta.url), 'utf8'));
 export const team = load('team.json');
@@ -8,18 +8,39 @@ export const calendar = load('calendar.json');
 export const projects = load('projects.json');
 // The signed-in manager (no auth yet).
 export const ME_ID = 'd0';
-export const name =(id) => team.find((p) => p.id === id)?.fullName ?? id;
+export const name = (id) => team.find((p) => p.id === id)?.fullName ?? id;
+
+// `team` is the whole pool of people. Someone is in the org when they are ME or report (indirectly) to ME.
+// Edits made in the UI are saved apart from the seed data (git-ignored) and re-applied on startup.
+const ORG_FILE = process.env.ORG_FILE || new URL('./data/org.local.json', import.meta.url);
+if (existsSync(ORG_FILE)) {
+  const saved = JSON.parse(readFileSync(ORG_FILE, 'utf8'));
+  for (const p of team) if (saved[p.id]) Object.assign(p, saved[p.id]);
+}
+export const saveOrg = () =>
+  writeFileSync(
+    ORG_FILE,
+    JSON.stringify(Object.fromEntries(team.map((p) => [p.id, { managerId: p.managerId, teamName: p.teamName ?? null }])), null, 2),
+  );
+
+export const subtreeIds = (id) => [id, ...team.filter((p) => p.managerId === id).flatMap((p) => subtreeIds(p.id))];
+export const orgMembers = () => {
+  const ids = new Set(subtreeIds(ME_ID));
+  return team.filter((p) => ids.has(p.id));
+};
+export const teamLabel = (p) => p.teamName || `הצוות של ${p.fullName}`;
 
 // Mock data is anchored to this date (latest commit), not the wall clock.
 export const REPORT_DATE = '2026-11-12';
 
 // Mock data is small, so it is injected whole. Replaced by RAG retrieval in a later stage.
-export const TEAM_CONTEXT = `
+// A function, not a constant: the org can change while the server runs.
+export const teamContext = () => `
 
 התאריך היום: ${REPORT_DATE}. נתוני הדמה הבאים הם כל המידע שיש לך – אל תמציא מעבר להם.
 
 חברי הצוות:
-${team.map((p) => `- ${p.fullName} | ${p.role} | ${p.city} | הכשרה: ${p.training} | כפוף ל: ${p.managerId ? name(p.managerId) : '— (המשתמשת הנוכחית)'}`).join('\n')}
+${orgMembers().map((p) => `- ${p.fullName} | ${p.role} | ${p.city} | הכשרה: ${p.training} | כפוף ל: ${p.id === ME_ID ? '— (המשתמשת הנוכחית)' : name(p.managerId)}${p.teamName ? ` | מוביל את ${p.teamName}` : ''}`).join('\n')}
 
 ספרינטים: ${jira.sprints.map((s) => `${s.name} (${s.start}–${s.end}, ${s.state})`).join('; ')}
 

@@ -1,4 +1,4 @@
-import { team, jira, git, name, TEAM_CONTEXT, REPORT_DATE } from '../data.js';
+import { orgMembers, jira, git, teamContext, REPORT_DATE } from '../data.js';
 import { complete } from '../llm.js';
 
 const WEEK_START = '2026-11-06';
@@ -13,7 +13,7 @@ export function computeStats() {
   const totalPoints = sprintTickets.reduce((s, t) => s + t.points, 0);
 
   const weekCommits = git.commits.filter((c) => inWeek(c.date));
-  const people = team.map((p) => {
+  const people = orgMembers().map((p) => {
     const commits = weekCommits.filter((c) => c.author === p.id);
     const open = sprintTickets.filter((t) => t.assignee === p.id && t.status !== 'Done');
     return {
@@ -52,7 +52,7 @@ export async function generateDigest() {
   const stats = computeStats();
   const markdown = await complete({
     system: SYSTEM,
-    prompt: `סטטיסטיקות:\n${JSON.stringify(stats, null, 2)}${TEAM_CONTEXT}\n\nהפק את הסיכום השבועי.`,
+    prompt: `סטטיסטיקות:\n${JSON.stringify(stats, null, 2)}${teamContext()}\n\nהפק את הסיכום השבועי.`,
     maxTokens: 2000,
   });
   return { stats, markdown, generatedAt: new Date().toISOString() };

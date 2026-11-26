@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
-import Markdown from '../Markdown.jsx';
+import Markdown from '../../components/Markdown.jsx';
+import DailyViz from '../../charts/DailyViz.jsx';
+import Loader from '../../components/Loader.jsx';
 
 const STEPS = [
   'אוסף משימות מ-Jira…',
@@ -8,21 +10,6 @@ const STEPS = [
   'מתעדף משימות…',
   'מנסח את מסמך הדיילי…',
 ];
-
-// Spinner with a rotating status line, so the wait (LLM call) doesn't look frozen.
-function Loader() {
-  const [i, setI] = useState(0);
-  useEffect(() => {
-    const t = setInterval(() => setI((n) => Math.min(n + 1, STEPS.length - 1)), 2500);
-    return () => clearInterval(t);
-  }, []);
-  return (
-    <div className="loader" role="status" aria-live="polite">
-      <span className="spinner" />
-      <span>{STEPS[i]}</span>
-    </div>
-  );
-}
 
 export default function DailyPage() {
   const [teams, setTeams] = useState([]);
@@ -63,6 +50,24 @@ export default function DailyPage() {
     }
   }
 
+  // The numbers need no LLM, so the charts load on their own and don't wait for the document.
+  const [stats, setStats] = useState(null);
+  useEffect(() => {
+    if (!teamId) return;
+    let stale = false;
+    setStats(null);
+    fetch(`/api/daily/${teamId}/stats`)
+      .then(async (r) => {
+        if (!r.ok) throw new Error(`שגיאה ${r.status}`);
+        return r.json();
+      })
+      .then((s) => !stale && setStats(s))
+      .catch((e) => !stale && setError(e.message));
+    return () => {
+      stale = true;
+    };
+  }, [teamId]);
+
   // Generate straight away when the page opens / the team changes: the daily is an every-morning habit.
   useEffect(() => {
     if (teamId) generate(teamId);
@@ -81,6 +86,7 @@ export default function DailyPage() {
 
   return (
     <section className="wide daily">
+      <a className="back" href="#/agent">← חזרה לסוכן</a>
       <h1 className="pagetitle">📋 מסמך דיילי</h1>
       <p className="muted">סיכום בוקר לפגישת הדיילי: מה בתעדוף עכשיו ומה צריך לקדם כדי לעמוד ביעדי הפרויקטים.</p>
 
@@ -104,7 +110,10 @@ export default function DailyPage() {
         )}
       </div>
 
-      {busy && <Loader />}
+      {stats && <DailyViz key={teamId} stats={stats} />}
+
+      <h2 className="docheading">📝 מסמך הדיילי</h2>
+      {busy && <Loader steps={STEPS} />}
       {error && <p className="err">⚠️ {error}</p>}
       {doc && (
         <article className="card dailydoc">

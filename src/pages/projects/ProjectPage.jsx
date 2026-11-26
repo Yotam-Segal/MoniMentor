@@ -1,16 +1,7 @@
 import { useEffect, useState } from 'react';
-import { Burnup, PeopleBars, StatusBar, STATUS_HE } from '../charts.jsx';
-
-export const HEALTH_LABEL = { on_track: 'בקצב', watch: 'שים לב', at_risk: 'בסיכון' };
-
-export function ProgressBar({ value, expected }) {
-  return (
-    <div className="progress" title={`התקדמות ${value}% (צפוי ${expected}%)`}>
-      <span style={{ width: `${value}%` }} />
-      {expected != null && <i style={{ right: `${expected}%` }} />}
-    </div>
-  );
-}
+import { HEALTH_LABEL, ProgressBar } from '../../components/ProjectHealth.jsx';
+import { TaskLink, linkTasks } from '../../components/TaskLink.jsx';
+import { Burnup, PeopleBars, StatusBar, STATUS_HE } from '../../charts/charts.jsx';
 
 const fmtDate = (d) => new Date(`${d}T12:00:00`).toLocaleDateString('he-IL', { day: 'numeric', month: 'long', year: 'numeric' });
 
@@ -85,7 +76,7 @@ export default function ProjectPage({ id }) {
               <li key={r.key} className="att high">
                 <span className="badge">דחוף</span>
                 <span>
-                  {r.key} · <a href={`#/person/${r.assigneeId}`}>{r.assignee}</a>: {r.text}
+                  <TaskLink id={r.key} /> · <a href={`#/person/${r.assigneeId}`}>{r.assignee}</a>: {linkTasks(r.text)}
                 </span>
               </li>
             ))}
@@ -101,8 +92,8 @@ export default function ProjectPage({ id }) {
           <tbody>
             {p.tickets.map((t) => (
               <tr key={t.key}>
-                <td>{t.key}</td>
-                <td>{t.title}</td>
+                <td><TaskLink id={t.key} /></td>
+                <td><a href={`#/task/${t.key}`}>{t.title}</a></td>
                 <td><a href={`#/person/${t.assignee}`}>{t.assigneeName}</a></td>
                 <td><span className={`status ${t.status.replace(' ', '')}`}>{STATUS_HE[t.status]}</span></td>
                 <td>{t.points}</td>
@@ -119,7 +110,7 @@ export default function ProjectPage({ id }) {
             {p.commits.map((c) => (
               <li key={c.hash} className="commit">
                 <code>{c.hash}</code> {c.message}
-                <small className="muted"> · {c.authorName} · {c.date} · {c.ticket}</small>
+                <small className="muted"> · {c.authorName} · {c.date} · <TaskLink id={c.ticket} /></small>
               </li>
             ))}
           </ul>

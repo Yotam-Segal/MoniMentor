@@ -31,7 +31,8 @@
       "sprint": "Sprint 14",
       "created": "2026-10-20",
       "resolved": "2026-10-30",
-      "project": "dash"
+      "project": "dash",
+      "description": "בניית endpoint להתחברות והנפקת JWT, כולל תוקף טוקן וטיפול בשגיאות."
     },
     {
       "key": "MM-102",
@@ -44,7 +45,8 @@
       "created": "2026-10-20",
       "resolved": "2026-11-04",
       "note": "התעכב כי ה-API של MM-101 לא היה מוכן עד 30/10",
-      "project": "dash"
+      "project": "dash",
+      "description": "מסך התחברות עם ולידציה והצגת שגיאות, מחובר ל-API האימות."
     },
     {
       "key": "MM-103",
@@ -56,7 +58,8 @@
       "sprint": "Sprint 14",
       "created": "2026-10-20",
       "resolved": "2026-10-28",
-      "project": "rag"
+      "project": "rag",
+      "description": "הגדרת טבלאות למשתמשים ולמשימות והקשרים ביניהן."
     },
     {
       "key": "MM-104",
@@ -68,7 +71,8 @@
       "sprint": "Sprint 14",
       "created": "2026-10-21",
       "resolved": "2026-10-29",
-      "project": "infra"
+      "project": "infra",
+      "description": "Pipeline שמריץ בנייה ובדיקות בכל push."
     },
     {
       "key": "MM-105",
@@ -80,7 +84,8 @@
       "sprint": "Sprint 14",
       "created": "2026-10-27",
       "resolved": "2026-11-06",
-      "project": "dash"
+      "project": "dash",
+      "description": "כיסוי אוטומטי להתחברות תקינה, סיסמה שגויה וטוקן שפג תוקף."
     },
     {
       "key": "MM-106",
@@ -92,7 +97,8 @@
       "sprint": "Sprint 14",
       "created": "2026-10-26",
       "resolved": "2026-11-05",
-      "project": "infra"
+      "project": "infra",
+      "description": "הוצאת סודות מהקוד וניהול מוצפן של מפתחות הפיתוח."
     },
     {
       "key": "MM-107",
@@ -104,7 +110,8 @@
       "sprint": "Sprint 14",
       "created": "2026-10-22",
       "resolved": "2026-11-02",
-      "project": "mvp"
+      "project": "mvp",
+      "description": "מסמך תכנון לחמשת הסוכנים, האחריות של כל אחד והזרימה ביניהם."
     },
     {
       "key": "MM-108",
@@ -116,7 +123,8 @@
       "sprint": "Sprint 14",
       "created": "2026-10-26",
       "resolved": "2026-11-08",
-      "project": "dash"
+      "project": "dash",
+      "description": "שלד הדשבורד הראשי, תפריט וניווט בין המסכים."
     },
     {
       "key": "MM-109",
@@ -128,7 +136,8 @@
       "sprint": "Sprint 14",
       "created": "2026-11-04",
       "resolved": "2026-11-08",
-      "project": "dash"
+      "project": "dash",
+      "description": "מעבר רגרסיה על מסך ההתחברות לפני סגירת הספרינט."
     },
     {
       "key": "MM-110",
@@ -141,7 +150,8 @@
       "created": "2026-10-27",
       "resolved": "2026-11-09",
       "note": "נסגר יום אחרי סוף הספרינט",
-      "project": "mvp"
+      "project": "mvp",
+      "description": "סקריפט שמייצא כרטיסים מ-Jira למסד הנתונים המקומי."
     },
     {
       "key": "MM-111",
@@ -153,7 +163,8 @@
       "sprint": "Sprint 15",
       "created": "2026-11-03",
       "due": "2026-11-16",
-      "project": "mvp"
+      "project": "mvp",
+      "description": "הסוכן קורא Git diffs, מפצל לקבצים ומחלץ את המשמעות העסקית של השינוי."
     },
     {
       "key": "MM-112",
@@ -165,7 +176,8 @@
       "sprint": "Sprint 15",
       "created": "2026-11-03",
       "due": "2026-11-11",
-      "project": "mvp"
+      "project": "mvp",
+      "description": "שליפת קומיטים ו-PRs מה-Git ושמירתם לשימוש הסוכנים."
     },
     {
       "key": "MM-113",
@@ -176,7 +188,8 @@
       "points": 5,
       "sprint": "Sprint 15",
       "created": "2026-11-05",
-      "project": "dash"
+      "project": "dash",
+      "description": "חלון צ׳אט בדשבורד שמציג את התשובה תוך כדי יצירתה."
     },
     {
       "key": "MM-114",
@@ -188,8 +201,9 @@
       "sprint": "Sprint 15",
       "created": "2026-11-05",
       "note": "חסום – ממתין לפורמט הפלט של סוכן הסיכומים",
-      "due": "2026-11-13",
-      "project": "dash"
+      "due": "2026-11-15",
+      "project": "dash",
+      "description": "מסך שמציג את הסיכום השבועי להנהלה בצורה מעוצבת."
     },
     {
       "key": "MM-115",
@@ -200,7 +214,8 @@
       "points": 5,
       "sprint": "Sprint 15",
       "created": "2026-11-09",
-      "project": "dash"
+      "project": "dash",
+      "description": "בדיקות מקצה לקצה: שליחת הודעה, סטרימינג וטיפול בשגיאות."
     },
     {
       "key": "MM-116",
@@ -211,7 +226,8 @@
       "points": 3,
       "sprint": "Sprint 15",
       "created": "2026-11-09",
-      "project": "infra"
+      "project": "infra",
+      "description": "בדיקת ביצועי ה-API בעומס מקבילי והגדרת ספים."
     },
     {
       "key": "MM-117",
@@ -222,7 +238,8 @@
       "points": 8,
       "sprint": "Sprint 15",
       "created": "2026-11-03",
-      "project": "infra"
+      "project": "infra",
+      "description": "מניפסטים והגדרות לסביבת staging ב-Kubernetes."
     },
     {
       "key": "MM-118",
@@ -233,7 +250,8 @@
       "points": 2,
       "sprint": "Sprint 15",
       "created": "2026-11-10",
-      "project": "infra"
+      "project": "infra",
+      "description": "הרצת npm audit, הערכת הפגיעויות ועדכון התלויות."
     },
     {
       "key": "MM-119",
@@ -244,7 +262,8 @@
       "points": 8,
       "sprint": "Sprint 15",
       "created": "2026-11-03",
-      "project": "mvp"
+      "project": "mvp",
+      "description": "הסוכן מזהה כרטיסים תקועים, עומסים וצווארי בקבוק בספרינט."
     },
     {
       "key": "MM-120",
@@ -255,7 +274,8 @@
       "points": 2,
       "sprint": "Sprint 15",
       "created": "2026-11-10",
-      "project": "mvp"
+      "project": "mvp",
+      "description": "חלק מהכרטיסים מיוצאים פעמיים בהרצה חוזרת של הייצוא."
     },
     {
       "key": "MM-121",
@@ -266,7 +286,8 @@
       "points": 3,
       "sprint": "Sprint 15",
       "created": "2026-11-09",
-      "project": "dash"
+      "project": "dash",
+      "description": "מעבר ידני על כל מסכי הדשבורד ותיעוד תקלות."
     },
     {
       "key": "MM-122",
@@ -277,7 +298,8 @@
       "points": 5,
       "sprint": "Sprint 15",
       "created": "2026-11-04",
-      "project": "rag"
+      "project": "rag",
+      "description": "Pipeline שמייצר Embeddings למסמכים ולדוחות לצורך חיפוש סמנטי."
     },
     {
       "key": "MM-123",
@@ -289,7 +311,8 @@
       "sprint": "Sprint 14",
       "created": "2026-10-27",
       "resolved": "2026-11-05",
-      "project": "rag"
+      "project": "rag",
+      "description": "השוואת Chroma מול FAISS והמלצה לסביבה מבודדת."
     },
     {
       "key": "MM-124",
@@ -300,7 +323,8 @@
       "points": 5,
       "sprint": "Sprint 15",
       "created": "2026-11-04",
-      "project": "rag"
+      "project": "rag",
+      "description": "API שמחזיר סיכומים קודמים לפי צוות ותאריך."
     },
     {
       "key": "MM-125",
@@ -313,7 +337,8 @@
       "created": "2026-11-04",
       "note": "חסום – ממתין להרשאות מ-IT",
       "due": "2026-11-10",
-      "project": "infra"
+      "project": "infra",
+      "description": "גיבוי יומי אוטומטי של מסד הנתונים ובדיקת שחזור."
     },
     {
       "key": "MM-126",
@@ -324,7 +349,8 @@
       "points": 5,
       "sprint": "Sprint 15",
       "created": "2026-11-05",
-      "project": "infra"
+      "project": "infra",
+      "description": "ניטור שירותי staging והגדרת התראות על תקלות."
     },
     {
       "key": "MM-127",
@@ -335,7 +361,8 @@
       "points": 3,
       "sprint": "Sprint 15",
       "created": "2026-11-05",
-      "project": "infra"
+      "project": "infra",
+      "description": "הגבלת הגישה לשרתים לפי רשתות והרשאות מאושרות."
     },
     {
       "key": "MM-128",
@@ -346,7 +373,8 @@
       "points": 3,
       "sprint": "Sprint 15",
       "created": "2026-11-05",
-      "due": "2026-11-16"
+      "due": "2026-11-16",
+      "description": "עדכון תוכנית הרבעון והצגתה להנהלה."
     },
     {
       "key": "MM-129",
@@ -356,7 +384,8 @@
       "status": "In Progress",
       "points": 2,
       "sprint": "Sprint 15",
-      "created": "2026-11-03"
+      "created": "2026-11-03",
+      "description": "פתיחת משרה, ראיונות ובחירת מועמד/ת למשרת Frontend."
     },
     {
       "key": "MM-130",
@@ -367,7 +396,8 @@
       "points": 3,
       "sprint": "Sprint 15",
       "created": "2026-11-05",
-      "project": "infra"
+      "project": "infra",
+      "description": "הערכת צריכת המשאבים הצפויה ברבעון הבא ותוכנית הרחבה."
     },
     {
       "key": "MM-131",
@@ -378,7 +408,8 @@
       "points": 3,
       "sprint": "Sprint 15",
       "created": "2026-11-05",
-      "due": "2026-11-15"
+      "due": "2026-11-15",
+      "description": "אישור תקציב שירותי הענן מול מחלקת הכספים."
     },
     {
       "key": "MM-132",
@@ -389,7 +420,8 @@
       "points": 5,
       "sprint": "Sprint 15",
       "created": "2026-11-06",
-      "due": "2026-11-20"
+      "due": "2026-11-19",
+      "description": "החלטה אם להריץ מודל מקומי (Ollama) או להשתמש בענן בסביבה המבודדת."
     },
     {
       "key": "MM-133",
@@ -400,7 +432,8 @@
       "points": 3,
       "sprint": "Sprint 15",
       "created": "2026-11-06",
-      "due": "2026-11-26"
+      "due": "2026-11-26",
+      "description": "הצגת מצב ה-MVP, הסיכונים ולוח הזמנים להנהלה."
     },
     {
       "key": "MM-134",
@@ -411,7 +444,8 @@
       "points": 5,
       "sprint": "Sprint 17 – דצמבר",
       "created": "2026-11-09",
-      "project": "release"
+      "project": "release",
+      "description": "הקפאת קוד ומעבר רגרסיה מלא לפני השחרור."
     },
     {
       "key": "MM-135",
@@ -422,7 +456,8 @@
       "points": 3,
       "sprint": "Sprint 17 – דצמבר",
       "created": "2026-11-09",
-      "project": "release"
+      "project": "release",
+      "description": "כתיבת מדריך משתמש קצר והדרכה למנהלים."
     },
     {
       "key": "MM-136",
@@ -433,7 +468,8 @@
       "points": 5,
       "sprint": "Sprint 17 – דצמבר",
       "created": "2026-11-10",
-      "project": "release"
+      "project": "release",
+      "description": "פריסה לייצור, תוכנית מעבר ותוכנית חזרה לאחור."
     }
   ]
 }

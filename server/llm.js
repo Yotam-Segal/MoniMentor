@@ -1,5 +1,6 @@
 import Anthropic from '@anthropic-ai/sdk';
-import { TEAM_CONTEXT } from './data.js';
+import { teamContext } from './data.js';
+import { capacityContext } from './schedule.js';
 
 // LLM layer is isolated here so it can later be swapped for Ollama/Qwen (see PRD).
 const SYSTEM_PROMPT = `אתה MoniMentor – עוזר AI למנהלים בכירים בחברות פיתוח.
@@ -27,7 +28,7 @@ export async function streamChat(messages, onText) {
     model: model(),
     max_tokens: 2048,
     thinking: NO_THINKING,
-    system: SYSTEM_PROMPT + TEAM_CONTEXT,
+    system: SYSTEM_PROMPT + teamContext() + capacityContext(),
     messages: toMessages(messages),
   });
   stream.on('text', onText);

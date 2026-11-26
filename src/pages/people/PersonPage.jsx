@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import Avatar from '../Avatar.jsx';
+import Avatar from '../../components/Avatar.jsx';
+import { TaskLink, linkTasks } from '../../components/TaskLink.jsx';
 
 const STATUS_HE = { Done: 'הושלם', 'In Progress': 'בעבודה', 'In Review': 'בסקירה', Blocked: 'חסום', 'To Do': 'לביצוע' };
 const TYPE_ICON = { oneonone: '👥', review: '🔍', meeting: '📅' };
@@ -32,7 +33,7 @@ export default function PersonPage({ id }) {
   if (error) return <section className="wide"><p className="err">⚠️ {error}</p></section>;
   if (!p) return <section className="wide"><p className="muted">טוען…</p></section>;
 
-  const title = p.isMe ? 'העבודה שלי' : p.fullName;
+  const title = p.isMe ? 'שולחן עבודה' : p.fullName;
 
   return (
     <section className="wide person">
@@ -55,6 +56,9 @@ export default function PersonPage({ id }) {
             </div>
           )}
           <div className="muted small">{p.training}</div>
+          <a className="schedbtn" href={`#/schedule/${p.isMe ? 'me' : p.id}`}>
+            🗓️ לוח זמנים וקיבולת
+          </a>
         </div>
       </header>
 
@@ -73,7 +77,13 @@ export default function PersonPage({ id }) {
             {p.attention.map((a, i) => (
               <li key={i} className={`att ${a.severity}`}>
                 <span className="badge">{SEV_LABEL[a.severity]}</span>
-                {a.personId !== p.id ? <a href={`#/person/${a.personId}`}>{a.text}</a> : a.text}
+                {a.ticket ? (
+                  <a href={`#/task/${a.ticket}`}>{a.text}</a>
+                ) : a.personId !== p.id ? (
+                  <a href={`#/person/${a.personId}`}>{a.text}</a>
+                ) : (
+                  a.text
+                )}
               </li>
             ))}
           </ul>
@@ -90,7 +100,7 @@ export default function PersonPage({ id }) {
                     {e.start}–{e.end}
                   </span>
                   <span>
-                    {TYPE_ICON[e.type]} {e.title}
+                    {TYPE_ICON[e.type]} {linkTasks(e.title)}
                     {e.with.length > 0 && <small className="muted"> · עם {e.with.join(', ')}</small>}
                   </span>
                 </div>
@@ -116,8 +126,8 @@ export default function PersonPage({ id }) {
             <tbody>
               {p.openTickets.map((t) => (
                 <tr key={t.key}>
-                  <td>{t.key}</td>
-                  <td>{t.title}</td>
+                  <td><TaskLink id={t.key} /></td>
+                  <td><a href={`#/task/${t.key}`}>{t.title}</a></td>
                   <td>
                     <span className={`status ${t.status.replace(' ', '')}`}>{STATUS_HE[t.status]}</span>
                   </td>
@@ -149,7 +159,7 @@ export default function PersonPage({ id }) {
           <ul className="plain">
             {p.recentCommits.map((c) => (
               <li key={c.hash} className="commit">
-                <code>{c.hash}</code> {c.message}
+                <code>{c.hash}</code> {c.message} {c.ticket && <TaskLink id={c.ticket} />}
                 <small className="muted">
                   {' '}
                   · {c.date} · +{c.additions}/-{c.deletions}

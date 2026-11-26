@@ -1,4 +1,5 @@
-import { team, jira, git, calendar, ME_ID, REPORT_DATE } from '../data.js';
+import { team, teamLabel, jira, git, ME_ID, REPORT_DATE } from '../data.js';
+import { getEvents } from '../outlook.js';
 import { complete } from '../llm.js';
 import { projectsForTeam } from '../projects.js';
 
@@ -12,7 +13,7 @@ const subtree = (id) => [id, ...reportsOf(id).flatMap((r) => subtree(r.id))];
 // Managers (below the signed-in user) that lead a team – the daily can be produced for each.
 export function dailyTeams() {
   const walk = (id) => reportsOf(id).flatMap((r) => (reportsOf(r.id).length ? [r, ...walk(r.id)] : []));
-  return walk(ME_ID).map((m) => ({ id: m.id, name: `הצוות של ${m.fullName}`, size: subtree(m.id).length - 1 }));
+  return walk(ME_ID).map((m) => ({ id: m.id, name: teamLabel(m), size: subtree(m.id).length - 1 }));
 }
 
 // Work days between two dates (Sun–Thu, Israeli work week).
@@ -77,9 +78,12 @@ export function computeDaily(teamId) {
         key: t.key,
         title: t.title,
         assignee: byId(t.assignee).fullName,
+        assigneeId: t.assignee,
         status: t.status,
         points: t.points,
         project: t.project ? (healthOf[t.project]?.name ?? t.project) : null,
+        projectId: t.project ?? null,
+        overdue: Boolean(t.due && t.due < REPORT_DATE),
         score,
         reasons,
       };
@@ -112,12 +116,12 @@ export function computeDaily(teamId) {
       notStarted: mine.filter((t) => t.status === 'To Do').map((t) => `${t.key} ${t.title}`),
       openPoints: mine.reduce((s, t) => s + t.points, 0),
       commitsSinceLastDaily: git.commits.filter((c) => c.author === id && c.date >= since).map((c) => `${c.hash} ${c.message}`),
-      meetingsToday: calendar.filter((e) => e.date === REPORT_DATE && e.people.includes(id)).map((e) => `${e.start} ${e.title}`),
+      meetingsToday: getEvents(id, REPORT_DATE, REPORT_DATE).map((e) => `${e.start} ${e.title}`),
     };
   });
 
   return {
-    team: `הצוות של ${manager.fullName}`,
+    team: teamLabel(manager),
     manager: manager.fullName,
     date: REPORT_DATE,
     sprint: { name: activeSprint.name, end: activeSprint.end, workdaysLeft: workdays(REPORT_DATE, addDays(activeSprint.end, 1)) },

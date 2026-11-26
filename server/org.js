@@ -1,7 +1,8 @@
-import { team, jira, git, calendar, ME_ID, REPORT_DATE } from './data.js';
+import { team, jira, git, ME_ID, REPORT_DATE } from './data.js';
+import { getEvents, addDays } from './outlook.js';
 
 const byId = (id) => team.find((p) => p.id === id);
-const publicPerson = (p) => ({ id: p.id, fullName: p.fullName, role: p.role, city: p.city, photo: p.photo ?? null });
+const publicPerson = (p) => ({ id: p.id, fullName: p.fullName, role: p.role, city: p.city, photo: p.photo ?? null, teamName: p.teamName ?? null });
 const reportsOf = (id) => team.filter((p) => p.managerId === id);
 
 function descendants(id) {
@@ -56,9 +57,8 @@ export function personView(id) {
     ...descendants(id).flatMap((d) => attentionFor(d.id, d.fullName)),
   ].sort((a, b) => SEVERITY_ORDER[a.severity] - SEVERITY_ORDER[b.severity]);
 
-  const events = calendar
-    .filter((e) => e.people.includes(id) && e.date >= REPORT_DATE)
-    .sort((a, b) => (a.date + a.start).localeCompare(b.date + b.start))
+  // Upcoming week from the person's Outlook calendar.
+  const events = getEvents(id, REPORT_DATE, addDays(REPORT_DATE, 6))
     .map((e) => ({ ...e, with: e.people.filter((x) => x !== id).map((x) => byId(x)?.fullName) }));
 
   const manager = p.managerId ? byId(p.managerId) : null;

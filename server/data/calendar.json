@@ -1,19 +1,215 @@
 [
-  { "id": "ev1", "date": "2026-11-12", "start": "14:00", "end": "15:00", "title": "סטטוס שבועי – הנהלת פיתוח", "type": "meeting", "people": ["d0", "l1", "y1"] },
-  { "id": "ev2", "date": "2026-11-12", "start": "16:00", "end": "16:30", "title": "סנכרון על אינטגרציית Git", "type": "meeting", "people": ["s1", "s2"] },
-  { "id": "ev3", "date": "2026-11-13", "start": "09:00", "end": "09:45", "title": "1-on-1 דורין ↔ ליאור", "type": "oneonone", "people": ["d0", "l1"] },
-  { "id": "ev4", "date": "2026-11-13", "start": "10:00", "end": "10:45", "title": "1-on-1 ליאור ↔ נועם", "type": "oneonone", "people": ["l1", "s1"] },
-  { "id": "ev5", "date": "2026-11-13", "start": "11:00", "end": "12:00", "title": "סקירת תקציב ענן עם כספים", "type": "meeting", "people": ["d0"] },
-  { "id": "ev6", "date": "2026-11-13", "start": "13:00", "end": "14:00", "title": "סקירת קוד – MM-112", "type": "review", "people": ["s2", "s1", "s3"] },
-  { "id": "ev7", "date": "2026-11-13", "start": "15:00", "end": "15:30", "title": "הרשאות גיבוי עם IT", "type": "meeting", "people": ["n2", "y1"] },
-  { "id": "ev8", "date": "2026-11-14", "start": "11:00", "end": "11:30", "title": "שחרור חסם: פורמט פלט סוכן הסיכומים", "type": "meeting", "people": ["s3", "s1"] },
-  { "id": "ev9", "date": "2026-11-14", "start": "14:00", "end": "15:00", "title": "תכנון בדיקות E2E לצ'אט", "type": "meeting", "people": ["s4", "s3"] },
-  { "id": "ev10", "date": "2026-11-15", "start": "09:00", "end": "10:00", "title": "סקירת אבטחה – סטייג'ינג", "type": "review", "people": ["s5", "n3", "y1"] },
-  { "id": "ev11", "date": "2026-11-15", "start": "10:00", "end": "11:00", "title": "ועדת היגוי MVP", "type": "meeting", "people": ["d0", "l1", "y1"] },
-  { "id": "ev12", "date": "2026-11-15", "start": "13:00", "end": "13:45", "title": "1-on-1 דורין ↔ יותם", "type": "oneonone", "people": ["d0", "y1"] },
-  { "id": "ev13", "date": "2026-11-15", "start": "14:00", "end": "15:00", "title": "ישיבת צוות תשתיות", "type": "meeting", "people": ["y1", "s5", "n1", "n2", "n3"] },
-  { "id": "ev14", "date": "2026-11-16", "start": "09:30", "end": "10:30", "title": "סקירת אמצע ספרינט 15", "type": "meeting", "people": ["l1", "s1", "s2", "s3", "s4"] },
-  { "id": "ev15", "date": "2026-11-16", "start": "11:00", "end": "11:45", "title": "1-on-1 יותם ↔ דור", "type": "oneonone", "people": ["y1", "s5"] },
-  { "id": "ev16", "date": "2026-11-16", "start": "13:00", "end": "14:00", "title": "סקירת בחירת Vector Store", "type": "review", "people": ["n1", "s2"] },
-  { "id": "ev17", "date": "2026-11-16", "start": "15:00", "end": "16:00", "title": "הכנה להצגת MVP להנהלה", "type": "meeting", "people": ["d0", "l1"] }
+  {
+    "id": "ev1",
+    "date": "2026-11-12",
+    "start": "14:00",
+    "end": "15:00",
+    "title": "סטטוס שבועי – הנהלת פיתוח",
+    "type": "meeting",
+    "people": [
+      "d0",
+      "l1",
+      "y1"
+    ]
+  },
+  {
+    "id": "ev2",
+    "date": "2026-11-12",
+    "start": "16:00",
+    "end": "16:30",
+    "title": "סנכרון על אינטגרציית Git",
+    "type": "meeting",
+    "people": [
+      "s1",
+      "s2"
+    ]
+  },
+  {
+    "id": "ev3",
+    "date": "2026-11-15",
+    "start": "09:00",
+    "end": "09:45",
+    "title": "1-on-1 דורין ↔ ליאור",
+    "type": "oneonone",
+    "people": [
+      "d0",
+      "l1"
+    ]
+  },
+  {
+    "id": "ev4",
+    "date": "2026-11-15",
+    "start": "10:00",
+    "end": "10:45",
+    "title": "1-on-1 ליאור ↔ נועם",
+    "type": "oneonone",
+    "people": [
+      "l1",
+      "s1"
+    ]
+  },
+  {
+    "id": "ev5",
+    "date": "2026-11-15",
+    "start": "11:00",
+    "end": "12:00",
+    "title": "סקירת תקציב ענן עם כספים",
+    "type": "meeting",
+    "people": [
+      "d0"
+    ]
+  },
+  {
+    "id": "ev6",
+    "date": "2026-11-15",
+    "start": "13:00",
+    "end": "14:00",
+    "title": "סקירת קוד – MM-112",
+    "type": "review",
+    "people": [
+      "s2",
+      "s1",
+      "s3"
+    ]
+  },
+  {
+    "id": "ev7",
+    "date": "2026-11-15",
+    "start": "15:00",
+    "end": "15:30",
+    "title": "הרשאות גיבוי עם IT",
+    "type": "meeting",
+    "people": [
+      "n2",
+      "y1"
+    ]
+  },
+  {
+    "id": "ev8",
+    "date": "2026-11-16",
+    "start": "11:00",
+    "end": "11:30",
+    "title": "שחרור חסם: פורמט פלט סוכן הסיכומים",
+    "type": "meeting",
+    "people": [
+      "s3",
+      "s1"
+    ]
+  },
+  {
+    "id": "ev9",
+    "date": "2026-11-16",
+    "start": "14:00",
+    "end": "15:00",
+    "title": "תכנון בדיקות E2E לצ'אט",
+    "type": "meeting",
+    "people": [
+      "s4",
+      "s3"
+    ]
+  },
+  {
+    "id": "ev10",
+    "date": "2026-11-17",
+    "start": "09:00",
+    "end": "10:00",
+    "title": "סקירת אבטחה – סטייג'ינג",
+    "type": "review",
+    "people": [
+      "s5",
+      "n3",
+      "y1"
+    ]
+  },
+  {
+    "id": "ev11",
+    "date": "2026-11-17",
+    "start": "10:00",
+    "end": "11:00",
+    "title": "ועדת היגוי MVP",
+    "type": "meeting",
+    "people": [
+      "d0",
+      "l1",
+      "y1"
+    ]
+  },
+  {
+    "id": "ev12",
+    "date": "2026-11-17",
+    "start": "13:00",
+    "end": "13:45",
+    "title": "1-on-1 דורין ↔ יותם",
+    "type": "oneonone",
+    "people": [
+      "d0",
+      "y1"
+    ]
+  },
+  {
+    "id": "ev13",
+    "date": "2026-11-17",
+    "start": "14:00",
+    "end": "15:00",
+    "title": "ישיבת צוות תשתיות",
+    "type": "meeting",
+    "people": [
+      "y1",
+      "s5",
+      "n1",
+      "n2",
+      "n3"
+    ]
+  },
+  {
+    "id": "ev14",
+    "date": "2026-11-18",
+    "start": "09:30",
+    "end": "10:30",
+    "title": "סקירת אמצע ספרינט 15",
+    "type": "meeting",
+    "people": [
+      "l1",
+      "s1",
+      "s2",
+      "s3",
+      "s4"
+    ]
+  },
+  {
+    "id": "ev15",
+    "date": "2026-11-18",
+    "start": "11:00",
+    "end": "11:45",
+    "title": "1-on-1 יותם ↔ דור",
+    "type": "oneonone",
+    "people": [
+      "y1",
+      "s5"
+    ]
+  },
+  {
+    "id": "ev16",
+    "date": "2026-11-18",
+    "start": "13:00",
+    "end": "14:00",
+    "title": "סקירת בחירת Vector Store",
+    "type": "review",
+    "people": [
+      "n1",
+      "s2"
+    ]
+  },
+  {
+    "id": "ev17",
+    "date": "2026-11-18",
+    "start": "15:00",
+    "end": "16:00",
+    "title": "הכנה להצגת MVP להנהלה",
+    "type": "meeting",
+    "people": [
+      "d0",
+      "l1"
+    ]
+  }
 ]
