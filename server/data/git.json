@@ -1,0 +1,27 @@
+{
+  "repo": "monimentor",
+  "commits": [
+    { "hash": "a1f3c02", "author": "s2", "date": "2026-10-23", "message": "feat(db): הוספת סכמת users ו-tasks", "files": 4, "additions": 142, "deletions": 0, "ticket": "MM-103" },
+    { "hash": "b7d19e4", "author": "s2", "date": "2026-10-28", "message": "feat(auth): endpoint להתחברות עם JWT", "files": 6, "additions": 210, "deletions": 12, "ticket": "MM-101" },
+    { "hash": "c3a8f51", "author": "s5", "date": "2026-10-28", "message": "ci: pipeline בסיסי ב-GitHub Actions", "files": 3, "additions": 88, "deletions": 0, "ticket": "MM-104" },
+    { "hash": "d90b2a7", "author": "s1", "date": "2026-10-30", "message": "docs: מסמך ארכיטקטורת 5 הסוכנים", "files": 2, "additions": 320, "deletions": 0, "ticket": "MM-107" },
+    { "hash": "e41c7d3", "author": "s2", "date": "2026-10-30", "message": "fix(auth): טיפול בטוקן שפג תוקף", "files": 2, "additions": 34, "deletions": 9, "ticket": "MM-101" },
+    { "hash": "f58e0b9", "author": "s3", "date": "2026-11-02", "message": "feat(ui): מסך התחברות", "files": 5, "additions": 260, "deletions": 3, "ticket": "MM-102" },
+    { "hash": "0a2d6c8", "author": "s4", "date": "2026-11-03", "message": "test(auth): בדיקות API לאימות", "files": 3, "additions": 175, "deletions": 0, "ticket": "MM-105" },
+    { "hash": "1b9e4f2", "author": "s5", "date": "2026-11-03", "message": "feat(sec): הצפנת סודות עם dotenv-vault", "files": 4, "additions": 97, "deletions": 15, "ticket": "MM-106" },
+    { "hash": "2c7f1a6", "author": "s3", "date": "2026-11-04", "message": "fix(ui): ולידציה בטופס ההתחברות", "files": 2, "additions": 41, "deletions": 7, "ticket": "MM-102" },
+    { "hash": "3d0a8e5", "author": "s3", "date": "2026-11-06", "message": "feat(ui): שלד דשבורד וניווט", "files": 9, "additions": 430, "deletions": 20, "ticket": "MM-108" },
+    { "hash": "4e6b3c1", "author": "s1", "date": "2026-11-06", "message": "refactor: הפרדת שכבת LLM למודול נפרד", "files": 5, "additions": 120, "deletions": 88, "ticket": "MM-107" },
+    { "hash": "5f1d9a0", "author": "s4", "date": "2026-11-07", "message": "test(ui): רגרסיה למסך התחברות", "files": 2, "additions": 66, "deletions": 0, "ticket": "MM-109" },
+    { "hash": "6a8c2e7", "author": "s2", "date": "2026-11-08", "message": "feat(jira): סקריפט ייצוא כרטיסים", "files": 4, "additions": 188, "deletions": 5, "ticket": "MM-110" },
+    { "hash": "7b3e5d4", "author": "s2", "date": "2026-11-09", "message": "fix(jira): טיפול ב-pagination בייצוא", "files": 2, "additions": 52, "deletions": 14, "ticket": "MM-110" },
+    { "hash": "8c4f7a9", "author": "s1", "date": "2026-11-10", "message": "feat(agent): קריאת git diff ופיצול לקבצים", "files": 7, "additions": 305, "deletions": 18, "ticket": "MM-111" },
+    { "hash": "9d5a0b2", "author": "s2", "date": "2026-11-10", "message": "feat(git): שליפת קומיטים ו-PRs מה-API", "files": 5, "additions": 224, "deletions": 0, "ticket": "MM-112" },
+    { "hash": "ae6c1d8", "author": "s3", "date": "2026-11-10", "message": "feat(chat): רכיב צ'אט בסיסי", "files": 4, "additions": 198, "deletions": 0, "ticket": "MM-113" },
+    { "hash": "bf7d2e3", "author": "s5", "date": "2026-11-11", "message": "infra: מניפסטים ראשונים ל-Kubernetes", "files": 8, "additions": 340, "deletions": 0, "ticket": "MM-117" },
+    { "hash": "c08e3f6", "author": "s3", "date": "2026-11-11", "message": "feat(chat): סטרימינג של תשובות", "files": 3, "additions": 112, "deletions": 21, "ticket": "MM-113" },
+    { "hash": "d19f4a1", "author": "s1", "date": "2026-11-11", "message": "feat(agent): חילוץ משמעות עסקית מ-diff (פרומפט ראשוני)", "files": 3, "additions": 94, "deletions": 6, "ticket": "MM-111" },
+    { "hash": "e2a05b7", "author": "s2", "date": "2026-11-12", "message": "fix(jira): הסרת כפילויות בייצוא", "files": 2, "additions": 29, "deletions": 11, "ticket": "MM-120" },
+    { "hash": "f3b16c4", "author": "s4", "date": "2026-11-12", "message": "test(ui): תסריטי בדיקה ידנית לדשבורד", "files": 1, "additions": 58, "deletions": 0, "ticket": "MM-121" }
+  ]
+}
